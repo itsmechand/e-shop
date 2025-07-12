@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eShop - Your Online Store</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Main CSS framework for utility-first styling -->
+
+    <!-- Font Awesome CDN version 6.5.0-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Icon library for all icons including arrows, shopping cart, social media etc -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Roboto font family for clean, modern typography -->
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+    <!-- Website icon displayed in browser tab -->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- External stylesheet for custom animations, glassmorphism effects, and blue theme -->
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sky-blue': '#0ea5e9',
+                        'sky-blue-light': '#38bdf8',
+                        'sky-blue-dark': '#0284c7'
+                    },
+                    fontFamily: {
+                        'roboto': ['Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-roboto bg-gray-50">
+
+    <!-- Sky blue themed navbar with eShop branding -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-gem text-sky-blue text-2xl"></i>
+                    <span class="text-xl font-bold text-gray-800">eShop</span>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-sky-blue transition-colors">Home</a>
+                    <a href="#products" class="text-gray-600 hover:text-sky-blue transition-colors">Products</a>
+                    <a href="#features" class="text-gray-600 hover:text-sky-blue transition-colors">Features</a>
+                    <a href="#about" class="text-gray-600 hover:text-sky-blue transition-colors">About</a>
+                    <a href="#contact" class="text-gray-600 hover:text-sky-blue transition-colors">Contact</a>
+                </div>
+
+                <!-- Shopping Cart -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <i class="fas fa-shopping-cart text-gray-600 text-xl cursor-pointer hover:text-sky-blue transition-colors"></i>
+                        <span class="absolute -top-2 -right-2 bg-sky-blue text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </div>
+                    <button class="md:hidden">
+                        <i class="fas fa-bars text-gray-600 text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section with gradient text, sky blue buttons, and glassmorphism cards -->
+    <section id="home" class="relative bg-gradient-to-br from-sky-blue to-blue-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                        Welcome to <span class="bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent">eShop</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-blue-100">
+                        Discover amazing products at unbeatable prices. Shop with confidence and enjoy premium quality delivered to your doorstep.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-white text-sky-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Shop Now
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-sky-blue transition-colors">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 text-center">
+                        <i class="fas fa-shipping-fast text-3xl mb-4"></i>
+                        <h3 class="font-semibold mb-2">Fast Delivery</h3>
+                        <p class="text-sm text-blue-100">Free shipping on orders over $50</p>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 text-center">
+                        <i class="fas fa-shield-alt text-3xl mb-4"></i>
+                        <h3 class="font-semibold mb-2">Secure Payment</h3>
+                        <p class="text-sm text-blue-100">100% secure payment processing</p>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 text-center">
+                        <i class="fas fa-undo text-3xl mb-4"></i>
+                        <h3 class="font-semibold mb-2">Easy Returns</h3>
+                        <p class="text-sm text-blue-100">30-day return policy</p>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 text-center">
+                        <i class="fas fa-headset text-3xl mb-4"></i>
+                        <h3 class="font-semibold mb-2">24/7 Support</h3>
+                        <p class="text-sm text-blue-100">Round the clock customer service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel section with navigation controls and sky blue indicators -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Featured Collections</h2>
+            <div class="relative">
+                <div class="carousel-container overflow-hidden rounded-lg">
+                    <div class="carousel-track flex transition-transform duration-500">
+                        <div class="carousel-slide min-w-full">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=400&fit=crop" alt="Electronics" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <h3 class="text-2xl font-bold mb-2">Electronics</h3>
+                                    <p class="mb-4">Latest gadgets and tech accessories</p>
+                                    <button class="bg-sky-blue px-6 py-2 rounded-lg hover:bg-sky-blue-dark transition-colors">Shop Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide min-w-full">
+                            <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=400&fit=crop" alt="Fashion" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <h3 class="text-2xl font-bold mb-2">Fashion</h3>
+                                    <p class="mb-4">Trendy clothing and accessories</p>
+                                    <button class="bg-sky-blue px-6 py-2 rounded-lg hover:bg-sky-blue-dark transition-colors">Shop Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide min-w-full">
+                            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=400&fit=crop" alt="Home & Garden" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <h3 class="text-2xl font-bold mb-2">Home & Garden</h3>
+                                    <p class="mb-4">Everything for your perfect home</p>
+                                    <button class="bg-sky-blue px-6 py-2 rounded-lg hover:bg-sky-blue-dark transition-colors">Shop Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full">
+                    <i class="fas fa-chevron-left text-gray-600"></i>
+                </button>
+                <button class="carousel-btn next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full">
+                    <i class="fas fa-chevron-right text-gray-600"></i>
+                </button>
+                <div class="carousel-indicators flex justify-center mt-4 space-x-2">
+                    <button class="indicator w-3 h-3 rounded-full bg-sky-blue"></button>
+                    <button class="indicator w-3 h-3 rounded-full bg-gray-300"></button>
+                    <button class="indicator w-3 h-3 rounded-full bg-gray-300"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features section with sky blue icon backgrounds -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Why Choose eShop?</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-sky-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-medal text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Premium Quality</h3>
+                    <p class="text-gray-600">All products are carefully selected for the highest quality standards</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-sky-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-truck text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Fast Delivery</h3>
+                    <p class="text-gray-600">Get your orders delivered within 2-3 business days</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-sky-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-undo-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Easy Returns</h3>
+                    <p class="text-gray-600">30-day hassle-free return policy for all products</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-sky-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tags text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Best Prices</h3>
+                    <p class="text-gray-600">Competitive prices with regular discounts and offers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product grid with sky blue pricing and hover effects -->
+    <section id="products" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Trending Products</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop" alt="Wireless Headphones" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Wireless Headphones</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(128)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sky-blue font-bold text-lg">$89.99</span>
+                            <button class="bg-sky-blue text-white px-4 py-2 rounded-lg hover:bg-sky-blue-dark transition-colors">
+                                <i class="fas fa-cart-plus mr-2"></i>Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop" alt="Smart Watch" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Smart Watch</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(95)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sky-blue font-bold text-lg">$199.99</span>
+                            <button class="bg-sky-blue text-white px-4 py-2 rounded-lg hover:bg-sky-blue-dark transition-colors">
+                                <i class="fas fa-cart-plus mr-2"></i>Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=200&fit=crop" alt="Running Shoes" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Running Shoes</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(203)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sky-blue font-bold text-lg">$129.99</span>
+                            <button class="bg-sky-blue text-white px-4 py-2 rounded-lg hover:bg-sky-blue-dark transition-colors">
+                                <i class="fas fa-cart-plus mr-2"></i>Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop" alt="Laptop" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Gaming Laptop</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(67)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sky-blue font-bold text-lg">$1,299.99</span>
+                            <button class="bg-sky-blue text-white px-4 py-2 rounded-lg hover:bg-sky-blue-dark transition-colors">
+                                <i class="fas fa-cart-plus mr-2"></i>Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product catalog table with sky blue header and hover states -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Complete Product Catalog</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-sky-blue text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left">Product</th>
+                                <th class="px-6 py-4 text-left">Category</th>
+                                <th class="px-6 py-4 text-left">Price</th>
+                                <th class="px-6 py-4 text-left">Rating</th>
+                                <th class="px-6 py-4 text-left">Stock</th>
+                                <th class="px-6 py-4 text-left">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center">
+                                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=50&h=50&fit=crop" alt="Headphones" class="w-10 h-10 rounded mr-3">
+                                        <span class="font-medium">Wireless Headphones</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600">Electronics</td>
+                                <td class="px-6 py-4 text-sky-blue font-bold">$89.99</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">In Stock</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <button class="bg-sky-blue text-white px-3 py-1 rounded hover:bg-sky-blue-dark transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center">
+                                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=50&h=50&fit=crop" alt="Smart Watch" class="w-10 h-10 rounded mr-3">
+                                        <span class="font-medium">Smart Watch</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600">Electronics</td>
+                                <td class="px-6 py-4 text-sky-blue font-bold">$199.99</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">In Stock</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <button class="bg-sky-blue text-white px-3 py-1 rounded hover:bg-sky-blue-dark transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center">
+                                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=50&h=50&fit=crop" alt="Running Shoes" class="w-10 h-10 rounded mr-3">
+                                        <span class="font-medium">Running Shoes</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600">Sports</td>
+                                <td class="px-6 py-4 text-sky-blue font-bold">$129.99</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm">Low Stock</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <button class="bg-sky-blue text-white px-3 py-1 rounded hover:bg-sky-blue-dark transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pagination with sky blue active states -->
+    <section class="py-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center">
+                <nav class="flex items-center space-x-2">
+                    <button class="px-3 py-2 text-gray-500 hover:text-sky-blue transition-colors">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="px-3 py-2 bg-sky-blue text-white rounded-lg">1</button>
+                    <button class="px-3 py-2 text-gray-600 hover:text-sky-blue transition-colors">2</button>
+                    <button class="px-3 py-2 text-gray-600 hover:text-sky-blue transition-colors">3</button>
+                    <button class="px-3 py-2 text-gray-600 hover:text-sky-blue transition-colors">4</button>
+                    <button class="px-3 py-2 text-gray-600 hover:text-sky-blue transition-colors">5</button>
+                    <button class="px-3 py-2 text-gray-500 hover:text-sky-blue transition-colors">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with sky blue gradient background and social links -->
+    <footer class="bg-gradient-to-r from-sky-blue to-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-gem text-2xl"></i>
+                        <span class="text-xl font-bold">eShop</span>
+                    </div>
+                    <p class="text-blue-100 mb-4">
+                        Your trusted online shopping destination for quality products at great prices.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-100 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-blue-100 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-blue-100 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-blue-100 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-colors">Returns</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-colors">Shipping Info</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-colors">Size Guide</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-colors">Track Order</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-blue-100 mb-4">Subscribe to get updates on new products and special offers.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-1 px-3 py-2 rounded-l-lg text-gray-800 focus:outline-none">
+                        <button class="bg-white text-sky-blue px-4 py-2 rounded-r-lg hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-blue-400 mt-8 pt-8 text-center">
+                <p class="text-blue-100">
+                    © 2024 eShop. All rights reserved. | Privacy Policy | Terms of Service
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating action button with sky blue gradient and up arrow -->
+    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-gradient-to-r from-sky-blue to-blue-600 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>
